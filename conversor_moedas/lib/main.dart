@@ -8,7 +8,7 @@ const request = 'https://api.hgbrasil.com/finance?format=json&key=6ace206a';
 void main() {
   runApp(MaterialApp(
       home: Home(),
-      theme: ThemeData(hintColor: Colors.amber, primaryColor: Colors.white)));
+      theme: ThemeData(hintColor: Colors.white, primaryColor: Colors.white)));
 }
 
 Future<Map> getData() async {
@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
   void _dolarChanged(String text) {
     if (_clearAll(text)) {
       double dolar = double.parse(text);
-      realController.text = (dolar * this.dolar).toStringAsFixed(2);
+      realController.text = (dolar * this.dolar * 1.04 * 1.0638).toStringAsFixed(2);
       euroController.text = (dolar * this.dolar / euro).toStringAsFixed(2);
     }
   }
@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
   void _euroChanged(String text) {
     if (_clearAll(text)) {
       double euro = double.parse(text);
-      realController.text = (euro * this.euro).toStringAsFixed(2);
+      realController.text = (euro * this.euro * 1.04 * 1.0638).toStringAsFixed(2);
       dolarController.text = (euro * this.euro / dolar).toStringAsFixed(2);
     }
   }
@@ -66,10 +66,12 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.deepPurple,
       appBar: AppBar(
-        title: Text('\$Conversor\$'),
-        backgroundColor: Colors.amber,
+        title: Text('Compra Internacional NuBank',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.deepPurple,
         centerTitle: true,
       ),
       body: FutureBuilder<Map>(
@@ -81,7 +83,7 @@ class _HomeState extends State<Home> {
                 return Center(
                   child: Text(
                     'Carregando Dados...',
-                    style: TextStyle(color: Colors.amber, fontSize: 25),
+                    style: TextStyle(color: Colors.white, fontSize: 25),
                     textAlign: TextAlign.center,
                   ),
                 );
@@ -90,7 +92,7 @@ class _HomeState extends State<Home> {
                   return Center(
                     child: Text(
                       'Erro ao carregar os dados :(',
-                      style: TextStyle(color: Colors.amber, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                       textAlign: TextAlign.center,
                     ),
                   );
@@ -105,13 +107,14 @@ class _HomeState extends State<Home> {
                         Icon(
                           Icons.monetization_on,
                           size: 150,
-                          color: Colors.amber,
+                          color: Colors.white,
                         ),
-                        buildTextField('Reais', 'R\$', realController, _realChanged),
-                        Divider(),
                         buildTextField('Dolares', 'US\$', dolarController, _dolarChanged),
                         Divider(),
                         buildTextField('Euros', '€', euroController, _euroChanged),
+                        Divider(),
+                        Divider(),
+                        buildTextField('Reais', 'R\$', realController, _realChanged, enabled: false)
                       ],
                     ),
                   );
@@ -122,18 +125,22 @@ class _HomeState extends State<Home> {
   }
 }
 
-Widget buildTextField(String label, String prefix, TextEditingController controller, Function onChanged) {
+Widget buildTextField(String label, String prefix, TextEditingController controller, Function onChanged, {enabled: true}) {
   return TextField(
     controller: controller,
     decoration: InputDecoration(
         labelText: label,
-        labelStyle: TextStyle(color: Colors.amber),
+        labelStyle: TextStyle(color: Colors.white),
         enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.amber)
+            borderSide: BorderSide(color: Colors.white),
         ),
         border: OutlineInputBorder(),
-        prefixText: prefix),
-    style: TextStyle(color: Colors.amber, fontSize: 25),
+        disabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white)
+        ),
+        prefixText: prefix
+    ),
+    style: TextStyle(color: Colors.white, fontSize: 25),
     onChanged: onChanged,
     keyboardType: TextInputType.numberWithOptions(decimal: true),
   );

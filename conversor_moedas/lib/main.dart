@@ -14,6 +14,155 @@ void main() {
 Future<Map> getData() async {
   http.Response response = await http.get(request);
   return json.decode(response.body);
+//   return {
+//   "by": "default",
+//   "valid_key": true,
+//   "results": {
+//     "currencies": {
+//       "source": "BRL",
+//       "USD": {
+//         "name": "Dollar",
+//         "buy": 4.4619,
+//         "sell": 4.4497,
+//         "variation": 0.401
+//       },
+//       "EUR": {
+//         "name": "Euro",
+//         "buy": 4.8898,
+//         "sell": 4.8442,
+//         "variation": 0.931
+//       },
+//       "GBP": {
+//         "name": "Pound Sterling",
+//         "buy": 5.7553,
+//         "sell": null,
+//         "variation": 0.171
+//       },
+//       "ARS": {
+//         "name": "Argentine Peso",
+//         "buy": 0.0721,
+//         "sell": null,
+//         "variation": 0.278
+//       },
+//       "BTC": {
+//         "name": "Bitcoin",
+//         "buy": 41619.988,
+//         "sell": 41619.988,
+//         "variation": 0.058
+//       }
+//     },
+//     "stocks": {
+//       "IBOVESPA": {
+//         "name": "BM&F BOVESPA",
+//         "location": "Sao Paulo, Brazil",
+//         "points": 105718.289,
+//         "variation": -7.0
+//       },
+//       "NASDAQ": {
+//         "name": "NASDAQ Stock Market",
+//         "location": "New York City, United States",
+//         "points": 8980.77,
+//         "variation": 0.17
+//       },
+//       "CAC": {
+//         "name": "CAC 40",
+//         "location": "Paris, French",
+//         "variation": -2.53
+//       },
+//       "NIKKEI": {
+//         "name": "Nikkei 225",
+//         "location": "Tokyo, Japan",
+//         "variation": -2.13
+//       }
+//     },
+//     "available_sources": [
+//       "BRL"
+//     ],
+//     "bitcoin": {
+//       "blockchain_info": {
+//         "name": "Blockchain.info",
+//         "format": [
+//           "USD",
+//           "en_US"
+//         ],
+//         "last": 8799.87,
+//         "buy": 8799.87,
+//         "sell": 8799.87,
+//         "variation": 0.058
+//       },
+//       "coinbase": {
+//         "name": "Coinbase",
+//         "format": [
+//           "USD",
+//           "en_US"
+//         ],
+//         "last": 8787.015,
+//         "variation": -0.097
+//       },
+//       "bitstamp": {
+//         "name": "BitStamp",
+//         "format": [
+//           "USD",
+//           "en_US"
+//         ],
+//         "last": 8795.0,
+//         "buy": 8795.0,
+//         "sell": 8789.12,
+//         "variation": -0.021
+//       },
+//       "foxbit": {
+//         "name": "FoxBit",
+//         "format": [
+//           "BRL",
+//           "pt_BR"
+//         ],
+//         "last": 39911.01,
+//         "variation": -0.174
+//       },
+//       "mercadobitcoin": {
+//         "name": "Mercado Bitcoin",
+//         "format": [
+//           "BRL",
+//           "pt_BR"
+//         ],
+//         "last": 40029.90001,
+//         "buy": 40029.90001,
+//         "sell": 40073.81554,
+//         "variation": 1.342
+//       },
+//       "omnitrade": {
+//         "name": "OmniTrade",
+//         "format": [
+//           "BRL",
+//           "pt_BR"
+//         ],
+//         "last": 39866.57,
+//         "buy": 39740.0,
+//         "sell": 40200.0,
+//         "variation": 0.877
+//       },
+//       "xdex": {
+//         "name": "XDEX",
+//         "format": [
+//           "BRL",
+//           "pt_BR"
+//         ],
+//         "last": 40406.24,
+//         "variation": 1.016
+//       }
+//     },
+//     "taxes": [
+//       {
+//         "date": "2020-02-20",
+//         "cdi": 4.15,
+//         "selic": 4.15,
+//         "daily_factor": 1.00016137
+//       }
+//     ]
+//   },
+//   "execution_time": 0.0,
+//   "from_cache": true
+// };
 }
 
 class Home extends StatefulWidget {

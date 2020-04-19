@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "378275029412",
+    "firebase_url": "https://taok-admin.firebaseio.com",
+    "project_id": "taok-admin",
+    "storage_bucket": "taok-admin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378275029412:android:42e1379962eefb8be32131",
+        "android_client_info": {
+          "package_name": "br.com.ciolfi.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378275029412-u7nf7gchbpb0r7ai69aelf7cn0qbl62a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.ciolfi.chat",
+            "certificate_hash": "140669df20c288ecb03005f805d798b8a14a3880"
+          }
+        },
+        {
+          "client_id": "378275029412-jdrhd0tgmg2c51askn727pip50phhpat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1F-PFINZ4U5e-zIAcHTAA4M9GTwLwasQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378275029412-jdrhd0tgmg2c51askn727pip50phhpat.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
